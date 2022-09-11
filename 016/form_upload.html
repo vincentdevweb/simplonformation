@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMPLON - Formulaire avec upload</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;300;500&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="Css/normalize.min.css" rel="stylesheet">
+    <link href="Css/mystyles.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ce0033">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="content">
+    <a href="/016" title="Acceuil">
+        <img alt="Simplon" class="logo" src="Imgs/simplon_white.svg">
+    </a>
+    <h1>Formulaire avec upload</h1>
+
+    <form action="post.php" enctype="multipart/form-data" method="post" autocomplete="off">
+
+        <label for="prenom">Votre prénom (<small class="red">*</small>)</label>
+        <input id="prenom" name="prenom" placeholder="Veuillez saisir votre prénom ici..." required type="text">
+
+        <label for="nom">Votre nom (<small class="red">*</small>)</label>
+        <input id="nom" name="nom" placeholder="Veuillez saisir votre nom ici..." required type="text">
+
+        <label for="email">Votre courriel (<small class="red">*</small>)</label>
+        <input id="email" name="email" placeholder="Veuillez saisir votre courriel ici..." required type="email">
+
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" placeholder="Veuillez saisir votre message ici..."></textarea>
+
+        <label for="file">Votre cv</label>
+        <input id="file" name="file" placeholder="Veuillez choisir votre CV..." type="file">
+
+        <button type="submit">Envoyer</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
