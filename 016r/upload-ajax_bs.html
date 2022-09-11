@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMPLON - Formulaire upload ajax avec Bootstrap</title>
+    <link href="Css/bootstrap.min.css" rel="stylesheet">
+    <link href="Css/mystylesBs.min.css" rel="stylesheet">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="site.webmanifest" rel="manifest">
+    <link color="#ce0033" href="safari-pinned-tab.svg" rel="mask-icon">
+    <meta content="#ffffff" name="msapplication-TileColor">
+    <meta content="#ffffff" name="theme-color">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <a href="index.html" title="Acceuil">
+                <img alt="Simplon" class="logo" src="Imgs/simplon.svg">
+            </a>
+        </div>
+        <div class="col">
+            <h1>Formulaire upload ajax avec Bootstrap</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+            <div class="card w-100">
+                <div class="card-body w-50 mx-auto">
+
+                    <div class="d-none" id="anim">
+                        <svg enable-background="new 0 0 100 100" viewBox="0 0 100 100"
+                             x="0px" xml:space="preserve" y="0px">
+                         <path d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+                          c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z" fill="#ce0033">
+                              <animateTransform
+                                      attributeName="transform"
+                                      attributeType="XML"
+                                      dur="2s"
+                                      from="0 50 50"
+                                      repeatCount="indefinite"
+                                      to="360 50 50"
+                                      type="rotate"/>
+                          </path>
+                            <path d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+                          c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z" fill="#ce0033">
+                              <animateTransform
+                                      attributeName="transform"
+                                      attributeType="XML"
+                                      dur="1s"
+                                      from="0 50 50"
+                                      repeatCount="indefinite"
+                                      to="-360 50 50"
+                                      type="rotate"/>
+                          </path>
+                            <path d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+                          L82,35.7z" fill="#ce0033">
+                              <animateTransform
+                                      attributeName="transform"
+                                      attributeType="XML"
+                                      dur="2s"
+                                      from="0 50 50"
+                                      repeatCount="indefinite"
+                                      to="360 50 50"
+                                      type="rotate"/>
+                          </path>
+                        </svg>
+                    </div>
+
+                    <div id="formzone">
+                        <form id="contactform">
+
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="prenom">Votre prénom (<small class="text-danger">*</small>)</label>
+                                <input class="form-control" name="prenom" id="prenom" placeholder="Veuillez saisir votre prénom ici..." required type="text">
+                                <div class="invalid-feedback">Veuillez saisir votre prénom s'il vous plaît.</div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="nom">Votre nom (<small class="text-danger">*</small>)</label>
+                                <input class="form-control" name="nom" id="nom" placeholder="Veuillez saisir votre nom ici..." required type="text">
+                                <div class="invalid-feedback">Veuillez saisir votre nom s'il vous plaît.</div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="email">Votre courriel (<small class="text-danger">*</small>)</label>
+                                <input class="form-control" name="email" id="email" placeholder="Veuillez saisir votre courriel ici..." required type="email">
+                                <div class="invalid-feedback">Veuillez saisir votre courriel s'il vous plaît.</div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="message">Votre message</label>
+                                <textarea class="form-control" name="message" id="message" placeholder="Veuillez saisir votre message ici..."></textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="file" class="form-label">Votre cv (<small class="text-danger">*</small>)</label>
+                                <input id="file" name="file" class="form-control" placeholder="Veuillez choisir votre CV..." required type="file" accept=".png,.jpg,.pdf,.docx,.odt">
+                                <div class="invalid-feedback">Veuillez choisir un fichier à transférer.</div>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-secondary" id="send" type="button">Envoyer</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Le mode strict
+    'use strict';
+
+    // On s'assure que le document est chargé pour exécuter du JavaScript
+    window.onload = () => {
+
+        // On renome l'objet document en d
+        let d = document;
+
+        // On selectionne le bouton d'envoi du formulaire par son id
+        let envoyer = d.querySelector('#send');
+
+        /**************************************************************************/
+        /*** On déclare un gestionnaire d'événement click sur le bouton d'envoi ***/
+        /*** On réceptionne l'objet JavaScript de l'événement e *******************/
+        /**************************************************************************/
+        envoyer.addEventListener('click', (e) => {
+
+            // On selectionne le formulaire par son id
+            let contactform = document.querySelector('#contactform');
+
+            // On récupère les données du formulaire avec l'objet Javascript Formadata
+            let contactdata = new FormData(contactform);
+
+            // On déclare un tableau qui stoquera le nom des champs en erreur
+            let formError = [];
+
+            // On valide le formulaire
+            // On travaille directement avec une boucle for of
+            // pour parcourir l'objet FormData
+            // qui contient le nom et la valeur des champs de formulaire
+            for (let field of contactdata) {
+                // la variable field prend la valeur de couples [Champ,Valeur] soit field[0] ou field[1]
+                // Pour chaque champ en erreur on stocke son nom dans le tableau formError
+                switch(field[0]) {
+                    case 'prenom':
+                        if(!field[1].trim().length) {
+                            formError.push('prenom');
+                        }
+                        break;
+                    case 'nom':
+                        if(!field[1].trim().length) {
+                            formError.push('nom');
+                        }
+                        break;
+                    case 'email':
+                        if(!field[1].trim().length) {
+                            formError.push('email');
+                        }
+                        break;
+                    case 'file':
+                        if(!field[1].name.length) {
+                            formError.push('file');
+                        }
+                        break;
+                }
+            }
+
+            // Si le tableau formError est vide, il n'y a pas d'erreur
+            // On effectue la requête fetch
+            if(!formError.length) {
+                // On masque le formulaire
+                let formzone = document.getElementById('formzone');
+                formzone.classList.add('d-none');
+
+                //On affiche l'animation
+                let anim = document.querySelector('#anim');
+                anim.classList.remove('d-none');
+
+                // On soumet le formulaire via l'API fetch en méthod POST
+                // On transmet l'objet FormData contactdata
+                fetch('post-ajax.php', {
+                    method: 'POST',
+                    body: contactdata
+
+                // On attend la réponse et on la converti en objet Javascript dès sa réception
+                }).then(response => {
+                    return response.json();
+
+                // Puis on réceptionne l'objet converti dans la variable data
+                }).then(data => {
+                    // On s'assure que la réponse a bien dans sa structure l'objet data.success à vrai
+                    if (data.success === true) {
+                        // Temporisation de 1,5 seconde pour laisser apparaitre l'animation
+                        setTimeout(() => {
+                            // On masque l'animation
+                            anim.classList.add('d-none');
+
+                            // On réaffiche la zone formulaire qui est là, remplacée par un titre.
+                            formzone.innerHTML = '<p>Le formulaire a été soumis avec succès !</p>';
+                            formzone.classList.remove('d-none');
+
+                            // On prépare le conteneur UL qui affichera la réponse.
+                            let content = '<ul class="list-group" style="width:130%">';
+
+                            // On parcourt toutes les propriétés de l'objet data.content que l'on vient de recevoir.
+                            for (let field in data.content) {
+
+                                // Si la l'objet réponse comporte un sous-objet, ce sont les propriétés du fichier uploadé
+                                if (typeof data.content[field] === 'object') {
+                                    content += '<li class="list-group-item list-group-item-success"><strong>File</strong>: <ul>';
+
+                                    // On parcourt les propriétés de l'objet file pour les afficher
+                                    for (let val in data.content[field].file) {
+                                        content += `<li class="list-group-item list-group-item-success"><strong>${val}</strong>: ${data.content[field].file[val]}</li>`;
+                                    }
+                                    content += '</ul></li>';
+
+                                // Sinon il s'agit des propriétés des champs que l'on affiche.
+                                } else {
+                                    content += `<li class="list-group-item list-group-item-success"><strong>${field}</strong>: ${data.content[field]}</li>`;
+                                }
+                            }
+                            content += '</ul>';
+
+                            // Affichage final de la réponse.
+                            formzone.innerHTML += content;
+                        }, 1500);
+                    }
+                // En cas d'erreur sur le fetch, on affiche cette erreur dans la console
+                }).catch(error => {
+                    console.error(error);
+                });
+
+            // Le tableau formError contient des nom de champ
+            } else {
+
+                // On applique la classe is-invalid aux champs en erreur
+                for(let error of formError) {
+                    d.querySelector(`#${error}`).classList.add('is-invalid');
+                }
+                // On enlève le focus sur le bouton de soumission du formulaire
+                e.currentTarget.blur();
+            }
+        });
+
+        /********************************************************************/
+        /*** On gère l'apparence des champs en erreur ou pas, à la saisie ***/
+        /********************************************************************/
+        d.querySelectorAll('#prenom, #nom, #email, #file').forEach(field => {
+            field.addEventListener('input', (e) => {
+                setApparence(e.currentTarget);
+            });
+        });
+
+
+        /*********************************************/
+        /*** Fonction qui valide une adresse email ***/
+        /*********************************************/
+        let ValideEmail = (email) => {
+            const validRegex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)])$/;
+            return !!email.match(validRegex);
+        }
+
+        /************************************************************/
+        /*** Fonction qui valide et change l'apparence des champs ***/
+        /************************************************************/
+        let setApparence = (field) => {
+            // Pour les champs obligatoires, on cible seulement les champs qui ont la propriété 'required' positionnée.
+            if(field.hasAttribute('required')) {
+                // Si le champ est rempli
+                if (field.value.trim().length) {
+                    field.classList.remove('is-invalid');
+                    field.classList.add('is-valid');
+                // Sinon le champ est vide
+                } else {
+                    field.classList.remove('is-valid');
+                    field.classList.add('is-invalid');
+                }
+            }
+            // Champs email, on cible seulement les champs qui ont l'attribut type="email" positionné.
+            if(field.hasAttribute('type') && field.getAttribute('type') === 'email') {
+                // S'il s'agit d'une adresse email valide.
+                if (field.value.trim().length && ValideEmail(field.value)) {
+                    field.classList.remove('is-invalid');
+                    field.classList.add('is-valid');
+                // Sinon l'adresse email n'est pas valide
+                } else {
+                    field.classList.remove('is-valid');
+                    field.classList.add('is-invalid');
+                }
+            }
+        };
+
+    }
+</script>
+
+</body>
+</html>

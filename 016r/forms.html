@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>FORMULAIRE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;300;500&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ce0033">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+
+    body {
+		font-family: 'Fira Sans Condensed', sans-serif;
+        margin: 20px
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-family: 'Roboto Condensed', sans-serif
+	}
+	mark.orange {
+		background-color: #FFCC33;
+        border: 1px solid  #FFCC33
+	}
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        margin: 100px
+    }
+	#nom2 {
+		color: #FF0000
+	}
+
+    </style>
+</head>
+<body>
+
+<h2><mark class="orange">FORMULAIRE METHOD POST</mark></h2>
+<form method="post" action="post.php">
+	<label for="nom">Votre Nom</label>
+	<input id="nom" type="text" name="nom" placeholder="Veuillez saisir votre nom" autocomplete="off">
+	<button type="submit">Envoyer</button>
+</form>
+
+
+<hr />	 <!-- Horizontal Rule -->
+
+<h2><mark>FORMULAIRE METHOD GET</mark></h2>
+<form method="get" action="post.php" autocomplete="off">
+	<label for="nom2">Votre Nom</label>
+	<input id="nom2" type="text" name="nom" placeholder="Veuillez saisir votre nom">
+	<button type="submit">Envoyer</button>
+</form>
+
+<br />   <!-- Break Return -->
+
+
+</body>
+</html>

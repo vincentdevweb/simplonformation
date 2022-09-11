@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript loop</title>
+    <style>
+	.rectangle {
+		background-color: aqua;
+		width: 100px;
+		height: 100px;
+		border:1px solid #CCCCCC;
+		margin: 20px;
+		padding:10px;
+		display: inline-block;
+	}
+	[id^="element-"]:hover {
+		cursor: pointer;
+	}
+    </style>
+    
+</head>
+<body>
+
+	<div id="element-1" class="rectangle">Bloc 1</div>
+	<div id="element-2" class="rectangle">Bloc 2</div>
+	<div id="element-3" class="rectangle">Bloc 3</div>
+	<div id="element-4" class="rectangle">Bloc 4</div>
+	<div id="element-5" class="rectangle">Bloc 5</div>
+	<div id="element-6" class="rectangle">Bloc 6</div>
+	
+	<div id="result"></div>
+	
+	
+
+
+<script>
+	let bloc3 = document.getElementById('element-3');
+	let result = document.getElementById('result');
+	
+	/*
+	bloc3.addEventListener('click', function() {
+		result.innerHTML += '<p>click sur element 3</p>';
+	});
+	*/
+	
+	for(let i=1; i<7; i++) {
+		document.getElementById('element-' + i).addEventListener('click', function() {
+			result.innerHTML += `<p>click sur element ${i}</p>`;
+		});
+	}
+	
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+<h1>Javascript</h1>
+
+
+<script>
+	let x = 1;
+	if(x === 1) {
+		let x = 2;
+		document.write(x + '<br />');
+		//Syntaxe de concaténation ES6
+		document.write(`${x} <br />`);
+		
+		
+	}
+	document.write(x + '<hr />');
+	
+	
+	function varTest() {
+		var y = 1;
+		if(y === 1) {
+			var y = 2;
+			console.log(y, 'Dans le if');
+		}
+		console.log(y, 'Après le if');
+	}
+	
+	varTest();
+	
+	var x1 = 'global';
+	let y1 = 'global';
+	
+	console.log(this.x1, 'this.x1');
+	console.log(this.y1, 'this.y1');
+	
+	console.log(window.x1, 'window.x1');
+	console.log(window.y1, 'window.y1');
+	
+	
+	let a = 3;
+	let b = 'Hello World';
+	let c = a + b;
+	console.log(c, ">>Concaténation");
+	
+	var g = 2;
+	var h = 3;
+	//var g = g + h;
+	
+	g += h;
+	
+	g++;
+	
+	console.log(g);
+	
+	let f = null;
+	console.log(f);
+	
+	
+	
+	
+	
+	
+
+	
+</script>
+
+
+
+
+
+</body>
+</html>
