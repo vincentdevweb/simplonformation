@@ -1,0 +1,8 @@
+Blog : Titre* , subtitle, description, logo
+User : firstname, lastname, email*, role, date_naissance
+post: Titre*, date_post, contenu 
+comment : contenu, date_comment
+tag : nom*
+
+
+*identifiant fonctionnel

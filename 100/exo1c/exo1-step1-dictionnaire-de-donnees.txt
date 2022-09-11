@@ -1,0 +1,3 @@
+Auteur : numero SIREN, nom de plume
+Livre : isbn, titre, date de publication
+

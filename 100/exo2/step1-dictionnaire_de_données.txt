@@ -1,0 +1,4 @@
+Client : Nom*, email
+Type de carte : Code* , libellé
+
+*Identifiant fonctionnel 

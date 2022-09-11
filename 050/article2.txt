@@ -1,0 +1,6 @@
+coucou tout le monde.
+$nom = $_POST['name']
+
+$list = array (
+array('title :',$ace,$king,$quenen),
+array

@@ -1,0 +1,2 @@
+A partir de la représentation graphique du MPD fourni en ressource,
+appliquer la méthode présentée dans le brief 'à l'envers' pour obtenir comme livrable : le dictionnaire de données correspondant et le MCD associé.
