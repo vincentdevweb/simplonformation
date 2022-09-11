@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Simple</title>
+    <link href="./css/normalize.css" rel="stylesheet" >
+    <link href="./css/bootstrap.min.css" rel="stylesheet" >
+
+    <style>
+        body{
+            background-color: black;
+        }
+        
+        img{
+            width: 30%;
+            height: 20%;
+        }
+
+        article{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: black;
+            color: whitesmoke;
+            display: grid;
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            color: blueviolet;
+            text-transform: capitalize;
+        }
+        a:hover{
+            color: red;
+        }
+        hr{
+            color: black;
+        }
+        .test{
+            display: flex;
+            color: whitesmoke;
+	        flex-direction: row;
+	        flex-wrap: nowrap;
+	        justify-content: center;
+	        align-items: baseline;
+	        align-content: stretch;
+        }
+
+        .box{
+            width: 40%;
+            height: 200px ;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            justify-content: space-between;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <nav class="test">
+        <img src="./imgs/simplon_white.svg">
+        <h1>Exercices HTML Simplon</h1>
+    </nav>
+
+    <article class="box card form-group">
+        </br>
+        <a href="./form_simple.html">Formulaire Simple</a>
+        </hr>
+        <a href="./form_simple_bs.html">Formulaire simple avec bootstrap</a>
+        </hr>
+        <a href="./form_upload.html">Formulaire simple avec upload</a>
+        </hr>
+        <a href="./form_upload_bs.html">Formulaire simple avec upload et bootstrap</a>
+    </article>
+<script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

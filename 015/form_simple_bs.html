@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Simple</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="/css/mycssbs.css" rel="stylesheet">
+
+</head>
+
+<body class="row">
+
+    <div class="row w-75 mx-auto">
+        <div class="col-sm-6">
+            <div class="card border-0">
+                <div class="card-body">
+                    <a href="./index.html"><img src="./imgs/simplon.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h1>Formulaire avec bootstrap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="card w-50 mx-auto form-group" method="post" action="post.php" autocomplete="off">
+
+        <label class="form-label" for="prenom">Votre prénom(*)</label>
+        <input required="required" class="form-control" type="text" name="prenom" id="prenom"
+            placeholder="Veuillez saisir votre prénom ici">
+        <label class="form-label" for="nom">Votre nom(*)</label>
+        <input required="required" class="form-control" type="text" name="nom" id="nom"
+            placeholder="Veuillez saisir votre nom ici">
+        <label class="form-label" for="email">Votre courriel(*)</label>
+        <input required="required" class="form-control" type="email" name="email" id="email"
+            placeholder="Veuillez saisir votre adresse mail ici">
+        <label class="form-label" for="Message">Votre Message</label>
+        <textarea class="form-label" id="message" name="message" rows="5" cols="56"
+            placeholder="Veuillez saisir votre message"></textarea>
+        <div class="d-grid justify-content-md-end">
+            <button class="form-control" type="submit" value="Envoyer">Envoyer</button>
+        </div>
+    </form>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

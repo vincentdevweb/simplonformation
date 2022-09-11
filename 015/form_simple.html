@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Simple</title>
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/mycss_simple.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="./index.html"><img src="./imgs/simplon_white.svg"></a>
+
+
+    <form method="post" action="post.php" autocomplete="off">
+        <h1>Formulaire simple</h1>
+        <div>
+            <label for="prenom">Votre prénom(*)</label></br>
+            <input required="required" type="text" name="prenom" id="prenom"
+                placeholder="Veuillez saisir votre prénom ici">
+        </div>
+        <div>
+            <label for="name">Votre nom(*)</label></br>
+            <input required="required" type="text" name="nom" id="nom" placeholder="Veuillez saisir votre nom ici">
+        </div>
+        <div>
+            <label for="email">Votre courriel(*)</label></br>
+            <input required="required" type="email" name="email" id="email"
+                placeholder="Veuillez saisir votre adresse mail ici">
+        </div>
+        <div>
+            <label for="message">Votre Message</label></br>
+            <textarea id="message" name="message" rows="5" cols="56"
+                placeholder="Veuillez saisir votre message"></textarea>
+        </div>
+        <div>
+            <input class="envoyer" type="submit" value="Envoyer">
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 template</title>
+</head>
+<body>
+
+<h1>Payment form</h1>
+<h2>Required fields are followed by*.</h2>
+<article>
+    <h2>
+        Contact information
+    </h2>
+    <form method="get" action="">
+        <h3>Title</h3>
+        <input type="radio" name="title"><label>Ace</label>
+        <input type="radio" name="title"><label>King</label>
+        <input type="radio" name="title"><label>Queen</label>
+        <div>
+            <label for="name">Name*</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="email">Mail*</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="Password">Password*</label>
+            <input type="password" name="password" id="password">
+        </div>
+    <h2>
+        Payment information
+    </h2>
+        <label>Card type:</label>
+        <button type="menu" menu="editmenu">visa</button>
+            <menu id="editmenu" type="context">
+              <menuitem label="Copy" onclick="copy()">
+              <menuitem label="Cut" onclick="cut()">
+              <menuitem label="Paste" onclick="paste()">
+            </menu>
+        <label>Card number:*</label><input type="number"></br>
+        <label>Expiration date:*</label><input type="date">
+        <div class="form-example">
+            <input type="submit" value="Validate the payment">
+        </div>
+    </article>
+    </form>
+
+</body>
+</html>
