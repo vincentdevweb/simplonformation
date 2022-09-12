@@ -14,4 +14,5 @@ $newpost->inserer('comment', $saisie);
 // $saisie_keys =  array_keys($_POST) ;
 // $saisie_value =  array_values($_POST) ;
 
-print_r($saisie);
+//print_r($saisie);
+header('Location: detail.php?idpost='.$saisie['post_id']);
